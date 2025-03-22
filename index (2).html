@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body id="remove">
+
+    <input id="input_a" placeholder="Enter A" type="number" />
+    <input id="input_b" placeholder="Enter B" type="number" />
+    <button onclick="generate_random_value();">Generate Random Value</button>
+    <div id="output_div"></div>
+
+    <script>
+        let colors = ["red", "green", "blue", "orange"];
+
+        function generate_random_value() {
+            let a = parseInt(document.getElementById("input_a").value);
+            let b = parseInt(document.getElementById("input_b").value);
+
+           
+
+            let random_value = Math.floor((b - a + 1) * Math.random()) + a;
+            document.getElementById("output_div").innerHTML = random_value;
+
+            let idx = Math.floor(Math.random() * colors.length);
+            document.getElementById("output_div").style.color = colors[idx];
+        }
+
+        function remove_everything() {
+            document.body.innerHTML = "vanished";
+        }
+
+        setInterval(remove_everything, 3000);
+    </script>
+
+</body>
+</html>
